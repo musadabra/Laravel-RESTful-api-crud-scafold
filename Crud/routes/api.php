@@ -4,9 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 //IMPORT CONTROLLER
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\LabelContrller;
-use App\Http\Controllers\TaskController;
+use App\Http\Controllers\API\ProjectController;
+use App\Http\Controllers\API\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +25,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // ROUTES
 
-Route::get("projects", [ProjectController::class, 'getProjects']);
+// PROJECT RESOURCES
+// Route::apiResource('projects', ProjectController::class)->middleware('auth:api');
+
+Route::apiResource('projects', ProjectController::class);
+Route::apiResource('tasks', TaskController::class);
