@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use DB;
+
 use Illuminate\Database\Seeder;
+use Hash;
 
 class UserSeeder extends Seeder
 {
