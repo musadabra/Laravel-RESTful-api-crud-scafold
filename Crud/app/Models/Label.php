@@ -12,7 +12,7 @@ class Label extends Model
     protected $table = 'label';
 
     protected $fillable = [
-        'label_id',
+        "user_id",
         'name',
         'description',
     ];

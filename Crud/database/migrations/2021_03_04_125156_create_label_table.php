@@ -16,13 +16,14 @@ class CreateLabelTable extends Migration
         Schema::create('label', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('label_id');
+            $table->unsignedBigInteger('user_id');
 
-            $table->string('nmae');
+            $table->string('name');
             $table->string('description');
+            $table->string('priority');
             $table->timestamps();
 
-            $table->foreign('label_id')->references('id')->on('label_type');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

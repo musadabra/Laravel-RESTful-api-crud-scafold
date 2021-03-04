@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 //IMPORT CONTROLLER
 use App\Http\Controllers\API\ProjectController;
 use App\Http\Controllers\API\TaskController;
+use App\Http\Controllers\API\LabelController;
+use App\Http\Controllers\API\SearchController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +34,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('projects', ProjectController::class);
 Route::apiResource('tasks', TaskController::class);
+Route::apiResource('labels', LabelController::class);
+
+// SEARCH
+Route::get("tasks/search/{description}", [SearchController::class, 'search']);
